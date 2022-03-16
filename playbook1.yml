@@ -1,0 +1,7 @@
+---
+-       name:nkemake
+        hosts:home
+        tasks:
+-       name: make sure nano is installed
+        yum:
+        state:lates
