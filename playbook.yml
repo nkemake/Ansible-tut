@@ -1,0 +1,4 @@
+- hosts: all 
+tasks
+- name: install unzip packkage
+  yum: name=unzip state=present update_cache=true
