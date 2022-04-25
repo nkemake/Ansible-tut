@@ -1,0 +1,9 @@
+--- 
+- name: patching the linux kernel
+  hosts: nfs_server
+  become: true
+
+  vars: 
+     patching_type: "KERNEL"
+  role:
+     - patching
