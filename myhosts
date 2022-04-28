@@ -1,4 +1,5 @@
 nagios_server ansible_host=192.168.1.221 ansible_user=ansible	 
+lamp__server ansible_host=192.168.1.222 ansible_user=ansible	 
 dns_server ansible_host=192.168.1.224 ansible_user=ansible
 nfs_server ansible_host=192.168.1.223 ansible_user=ansible
 

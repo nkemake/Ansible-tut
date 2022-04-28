@@ -1,5 +1,5 @@
 ---
--  hosts: all
+-  hosts: nfs_server
    become: true
    tasks:
 
@@ -12,10 +12,20 @@
       name: httpd
       state: started
 
-   - name: "Tasks2: Enabling the port on firewall"
-     become: true
-     firewalld:
-      port: 8081
-      permanent: true
-      state: enabled
-      immidiate: yes
+
+- name: Firewalld Rules
+  hosts: nfs_server
+  become: true
+
+  tasks:
+  - name: Web acces Firewall rule
+    firewalld:
+       zone: public
+       port: 8081/tcp
+       permanent: yes
+       state: enabled
+
+  - name: Reload firewalld service
+    service: 
+      name: firewalld
+      state: restarted
